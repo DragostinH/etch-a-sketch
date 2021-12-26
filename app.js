@@ -14,7 +14,6 @@ const clearButton = document.getElementById('clear-button');
 
 
 const colorPicker = document.getElementById('color-picker');
-console.log(colorPicker.value);
 
 
 // Adding event listener for when you click it to clear the grid

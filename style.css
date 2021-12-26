@@ -20,19 +20,17 @@ body{
 }
 
 #container{
-    /* border: 1px solid red; */
     width: 400px;
     height: 400px;
     display: flex;
-    /* justify-content: center; */
-    /* align-items: center; */
     flex-wrap: wrap;
     margin: 0;
     padding: 0;
 
 }
 
-/* .cube-element:hover{
-    background-color: aqua;
-
-} */
+#size-buttons{
+    padding: 0.5em 1em 0.5em 1em;
+    margin-top: 1em;
+    margin-bottom: 1em;
+}
