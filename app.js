@@ -4,14 +4,39 @@ createGrid(mainContainer);
 paintCubes(mainContainer);
 
 
-let size = "";
-const buttons = document.querySelectorAll('#size-buttons');
+let sizeOfArea = "";
+let chosenColor = "";
+// Buttons for setting the size of the draw area
+const sizeButtons = document.querySelectorAll('#size-buttons');
 
-buttons.forEach(element => {
-    element.addEventListener('click', e => {
-        size = element.className;
+// Clear button. Both for when there has been a size set or not
+const clearButton = document.getElementById('clear-button');
+
+
+const colorPicker = document.getElementById('color-picker');
+console.log(colorPicker.value);
+
+
+// Adding event listener for when you click it to clear the grid
+clearButton.addEventListener('click', e=>{
+    if(sizeOfArea.length===0){
         removeGrid(mainContainer);
-        createGrid(mainContainer, size);
+        createGrid(mainContainer);
+        paintCubes(mainContainer);
+
+    }else{
+        removeGrid(mainContainer);
+        createGrid(mainContainer,sizeOfArea);
+        paintCubes(mainContainer);
+
+    }
+})
+// adding event listener for when you click a button to change the size of the grid
+sizeButtons.forEach(element => {
+    element.addEventListener('click', e => {
+        sizeOfArea = element.className;
+        removeGrid(mainContainer);
+        createGrid(mainContainer, sizeOfArea);
         paintCubes(mainContainer);
     })
 })
@@ -53,7 +78,7 @@ function paintCubes(parentElement){
     console.log(listOfCubes);
     listOfCubes.forEach(ele =>{
         ele.addEventListener("mouseenter", e=>{
-            ele.style.backgroundColor="black";
+            ele.style.backgroundColor=colorPicker.value;
         })
 
     })
