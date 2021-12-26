@@ -61,7 +61,7 @@ function createGrid(parentElement, numberOfSquares = 4) {
         element.style.width = squareWidth + "px";
         element.classList.add('cube-element');
         // border to view squares
-        element.style.border = "1px solid black";
+//         element.style.border = "1px solid black";
         parentElement.appendChild(element);
     }
 }
